@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert PDF files to editable Word documents easily with this free online PDF to Word converter.">
+  <meta name="keywords" content="PDF to Word, convert PDF, PDF converter, online tools">
+  <meta name="author" content="Your Name">
+  <title>PDF to Word Converter - Free Online Tool</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7fafc;
+      color: #2d3748;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 90%;
+      margin: 20px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #1a365d;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #4a5568;
+    }
+
+    /* Upload Box */
+    .upload-box {
+      border: 2px dashed #cbd5e0;
+      padding: 30px;
+      border-radius: 10px;
+      background: #f7fafc;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .upload-box:hover {
+      border-color: #4299e1;
+      background: #ebf8ff;
+    }
+
+    .upload-box p {
+      margin: 0;
+      font-size: 1rem;
+      color: #4a5568;
+    }
+
+    #file-input {
+      display: none;
+    }
+
+    /* Buttons */
+    .btn {
+      background: #4299e1;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #3182ce;
+      transform: translateY(-2px);
+    }
+
+    .btn:disabled {
+      background: #cbd5e0;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Download Link */
+    .download-link {
+      display: none;
+      margin-top: 20px;
+      color: #4299e1;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .download-link:hover {
+      color: #3182ce;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #718096;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .upload-box {
+        padding: 20px;
+      }
+
+      .upload-box p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>PDF to Word Converter</h1>
+    <p>Upload a PDF file to convert it to an editable Word document.</p>
+
+    <!-- Upload Box -->
+    <div class="upload-box" onclick="document.getElementById('file-input').click()">
+      <p>Click or drag to upload a PDF file</p>
+    </div>
+    <input type="file" id="file-input" accept="application/pdf">
+
+    <!-- Convert Button -->
+    <button class="btn" onclick="convertToWord()" disabled id="convert-btn">Convert to Word</button>
+
+    <!-- Download Link -->
+    <a id="download-link" class="download-link" download="converted-document.docx">Download Word File</a>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2023 Online Tools. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const convertBtn = document.getElementById('convert-btn');
+    const downloadLink = document.getElementById('download-link');
+
+    fileInput.addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        convertBtn.disabled = false;
+      }
+    });
+
+    function convertToWord() {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      // Placeholder for conversion logic
+      alert("Conversion functionality requires a backend service or API. This is a frontend placeholder.");
+      downloadLink.style.display = 'block';
+      downloadLink.href = '#'; // Replace with the actual download link after conversion
+    }
+  </script>
+</body>
+</html>
